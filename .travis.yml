@@ -1,5 +1,13 @@
 language: node_js
+sudo: false
 node_js:
-  - "6"
-before_script:
-  - npm install -g macaca-cli macaca-electron macaca-ios macaca-android macaca-chrome
+  - "4"
+addons:
+  apt:
+    packages:
+      - xvfb
+install:
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1366x768x24 > /dev/null 2>&1 &
+script: make travis
+after_script: "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"
