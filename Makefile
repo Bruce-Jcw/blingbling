@@ -13,33 +13,33 @@ test:
 	@echo "make test-pc              Test sample for PC"
 test-ios: install
 	macaca doctor
-	platform=ios macaca run --verbose -d ./macaca-test/macaca-mobile-sample.test.js
+	platform=ios macaca run --verbose
 test-ios-safari: install
 	macaca doctor
-	browser=safari macaca run --verbose -d ./macaca-test/macaca-mobile-browser-sample.test.js
+	browser=safari macaca run --verbose
 test-android-chrome: install
 	macaca doctor
-	browser=chrome macaca run --verbose -d ./macaca-test/macaca-mobile-browser-sample.test.js
+	browser=chrome macaca run --verbose
 test-android: install
 	macaca doctor
-	platform=android macaca run --verbose -d ./macaca-test/macaca-mobile-sample.test.js
+	platform=android macaca run --verbose
 test-pc:
 	macaca doctor
-	macaca run --verbose -d ./macaca-test/macaca-desktop-sample.test.js
+	macaca run --verbose
 travis-pc:
 	npm install macaca-electron --save-dev
 	${npm_bin}/macaca doctor
-	${npm_bin}/macaca run -d ./macaca-test/macaca-desktop-sample.test.js --no-window
+	${npm_bin}/macaca run --no-window
 travis: install travis-pc
 	@echo travis passed
 travis-android: install
 	npm install macaca-android --save-dev
 	${npm_bin}/macaca doctor
-	platform=android ${npm_bin}/macaca run --verbose -d ./macaca-test/macaca-mobile-sample.test.js
+	platform=android ${npm_bin}/macaca run --verbose 
 travis-ios: install
 	npm install macaca-ios --save-dev
 	${npm_bin}/macaca doctor
-	platform=ios ${npm_bin}/macaca run --verbose -d ./macaca-test/macaca-mobile-sample.test.js
+	platform=ios ${npm_bin}/macaca run --verbose
 jshint:
 	@${npm_bin}/jshint .
 .PHONY: test
