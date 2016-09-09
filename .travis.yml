@@ -1,5 +1,3 @@
 language: node_js
 node_js:
   - "6"
-before_script:
-  - npm install -g macaca-cli macaca-electron macaca-ios macaca-android macaca-chrome
