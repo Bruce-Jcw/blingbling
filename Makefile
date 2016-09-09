@@ -30,12 +30,12 @@ travis-pc:
 	npm install macaca-electron --save-dev
 	${npm_bin}/macaca doctor
 	${npm_bin}/macaca run --no-window
-travis: install travis-pc
+travis: install travis-ios
 	@echo travis passed
 travis-android: install
 	npm install macaca-android --save-dev
 	${npm_bin}/macaca doctor
-	platform=android ${npm_bin}/macaca run --verbose 
+	platform=android ${npm_bin}/macaca run --verbose
 travis-ios: install
 	npm install macaca-ios --save-dev
 	${npm_bin}/macaca doctor

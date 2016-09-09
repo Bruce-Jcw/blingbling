@@ -11,8 +11,11 @@
     "react-native": "0.32.0"
   },
   "devDependencies": {
+    "jshint": "*",
+    "macaca-cli": "^1.1.2",
     "macaca-utils": "^0.1.8",
     "macaca-wd": "^1.0.8",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pre-commit": "1.1.1"
   }
 }
