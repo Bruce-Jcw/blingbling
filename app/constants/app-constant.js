@@ -1,4 +1,4 @@
-const baseUrl = 'http://192.168.1.121.xip.io:8777'
+const baseUrl = 'http://192.168.1.121:8777'
 
 export const LIST_VIEW_URL = `${baseUrl}`
 

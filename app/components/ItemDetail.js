@@ -23,16 +23,17 @@ class ItemDetail extends Component {
   }
 
   componentDidMount() {
-    fetch(`${DETAIL_VIEW_URL}/${this.props.id}`, {method: "GET"})
-      .then((response) => response.json())
-      .then((responseData) => {
+    var responseData = {id: 1,name: 1,image: "https://img.alicdn.com/tps/TB17ghmIFXXXXXAXFXXXXXXXXXX.png",comment: "hi bb"}
+    // fetch(`${DETAIL_VIEW_URL}/${this.props.id}`, {method: "GET"})
+      // .then((response) => response.json())
+      // .then((responseData) => {
         console.log(responseData)
         this.setState({
           isLoading: false,
           item: responseData
         });
-      })
-      .done();
+      // })
+      // .done();
   }
 
   render() {

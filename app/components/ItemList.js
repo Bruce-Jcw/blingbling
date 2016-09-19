@@ -27,9 +27,10 @@ class ItemList extends Component {
   }
 
   componentDidMount() {
-    fetch(LIST_VIEW_URL, {method: "GET"})
-      .then((response) => response.json())
-      .then((responseData) => {
+    var responseData = [{id: 1,name: 1,image: "https://img.alicdn.com/tps/TB17ghmIFXXXXXAXFXXXXXXXXXX.png",comment: "hi bb"},{id: 2,name: 2},{id: 3,name: 3}]
+    // fetch(LIST_VIEW_URL, {method: "GET"})
+      // .then((response) => response.json())
+      // .then((responseData) => {
         for (var i = 0; i < responseData.length; i++) {
           responseData[i].id = responseData[i].id.toString()
           responseData[i].name = responseData[i].name.toString()
@@ -40,8 +41,8 @@ class ItemList extends Component {
           isLoading: false,
           dataSource: ds.cloneWithRows(responseData)
         });
-      })
-      .done();
+      // })
+      // .done();
   }
 
   render() {
@@ -68,7 +69,7 @@ class ItemList extends Component {
 
   _renderRow(rowData) {
     return (
-      <TouchableHighlight onPress={ () => this._onForward(rowData.id, rowData.name)} style={styles.flex}>
+      <TouchableHighlight onPress={ () => this._onForward(rowData.id, rowData.name)} style={styles.flex} class="list-item-m">
         <View style={styles.mediaItem}>
           <View style={styles.flex}>
             <View style={[styles.media]}>

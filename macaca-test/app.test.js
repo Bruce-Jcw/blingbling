@@ -22,7 +22,8 @@ describe('macaca mobile sample', function() {
       deviceName: 'iPhone 6s',
       platformName: 'iOS',
       //bundleId: 'xudafeng.ios-app-bootstrap',
-      app: 'ios/build/Build/Products/Debug-iphonesimulator/blingbling.app'
+      app: '/Users/jia/Library/Developer/Xcode/DerivedData/blingbling-eyxznqageekmjeaqessvyokclkfv/Build/Products/Debug-iphonesimulator/blingbling.app'
+
     });
   });
 
@@ -39,8 +40,20 @@ describe('macaca mobile sample', function() {
       .sleep(1000)
   });
 
-  it('#1 should navigate to detail', function() {
-    let viewXpath = "//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]"
+  it('#2 should list', function() {
+    return driver
+      .sleep(2000)
+      .elementsByClassName('list-item-m')
+      .then(function(eles) {
+        console.log("**********");
+        console.log(eles);
+        console.log(eles.length)
+        console.log("**********");
+      })
+  });
+
+  it('#3 should navigate to detail', function() {
+    var viewXpath = "//XCUIElementTypeApplication[1]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeScrollView[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]"
     return driver
       .elementByXPath(viewXpath)
       .tap()
